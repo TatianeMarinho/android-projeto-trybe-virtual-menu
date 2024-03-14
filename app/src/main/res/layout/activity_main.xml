@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginBottom="30dp"
-        android:text="titulo"
+        android:text="titulo cardapio"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="22sp"
