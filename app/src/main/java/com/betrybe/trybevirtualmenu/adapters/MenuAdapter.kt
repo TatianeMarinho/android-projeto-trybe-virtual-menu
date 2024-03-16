@@ -13,7 +13,7 @@ import com.betrybe.trybevirtualmenu.R
 class MenuAdapter(private val menuItems: List<MenuItem>) : Adapter<MenuAdapter.MenuViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_menu_item_detail, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_layout, parent, false)
         return MenuViewHolder(itemView)
     }
 
@@ -27,16 +27,12 @@ class MenuAdapter(private val menuItems: List<MenuItem>) : Adapter<MenuAdapter.M
     }
 
     class MenuViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val itemNameTextView: TextView = itemView.findViewById(R.id.detail_name)
-        private val itemImageView: ImageView = itemView.findViewById(R.id.detail_image)
-        private val itemDescriptionTextView: TextView = itemView.findViewById(R.id.detail_description)
-        private val itemPriceTextView: TextView = itemView.findViewById(R.id.detail_price)
+        private val itemMenuNameTextView: TextView = itemView.findViewById(R.id.item_menu_name)
+        private val itemMenuImageView: ImageView = itemView.findViewById(R.id.item_menu_image)
 
         fun bind(menuItem: MenuItem) {
-            itemNameTextView.text = menuItem.name
-            itemImageView.setImageResource(menuItem.imageResource)
-            itemDescriptionTextView.text = menuItem.description
-            itemPriceTextView.text = menuItem.price
+            itemMenuNameTextView.text = menuItem.name
+            itemMenuImageView.setImageResource(menuItem.imageResource)
         }
     }
 }
