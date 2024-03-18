@@ -1,6 +1,7 @@
 package com.betrybe.trybevirtualmenu.views
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ class MenuItemDetailActivity : AppCompatActivity() {
     private val detailImage: ImageView by lazy { findViewById(R.id.detail_image) }
     private val detailDescription: TextView by lazy { findViewById(R.id.detail_description) }
     private val detailPrice: TextView by lazy { findViewById(R.id.detail_price) }
+    private val detailBack: Button by lazy { findViewById(R.id.detail_back) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,10 @@ class MenuItemDetailActivity : AppCompatActivity() {
         detailImage.setImageResource(dish.imageResource)
         detailDescription.text = dish.description
         detailPrice.text = "R$ ${ dish.price }"
+
+        detailBack.setOnClickListener {
+            finish()
+        }
     }
 }
 

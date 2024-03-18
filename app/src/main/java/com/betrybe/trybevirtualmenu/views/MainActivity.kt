@@ -13,6 +13,7 @@ import com.betrybe.trybevirtualmenu.models.VirtualMenuDatabase
 
 class MainActivity : AppCompatActivity(), OnItemClickListener {
 
+    private val mainMenu by lazy { findViewById<RecyclerView>(R.id.main_menu) }
         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,13 +21,10 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
         val dishes = VirtualMenuDatabase.getDishes()
         val menuAdapter = MenuAdapter(dishes, this)
 
-        val mainMenu = findViewById<RecyclerView>(R.id.main_menu)
-
         mainMenu.adapter = menuAdapter
         mainMenu.layoutManager = LinearLayoutManager(this)
         mainMenu.setHasFixedSize(true)
     }
-
         override fun onItemClick(view: View, position: Int) {
             val intent = Intent(this, MenuItemDetailActivity::class.java)
             intent.putExtra("menuItem", position)
