@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.betrybe.trybevirtualmenu.models.MenuItem
 import com.betrybe.trybevirtualmenu.R
+import com.betrybe.trybevirtualmenu.interfaces.OnItemClickListener
 
-class MenuAdapter(private val menuItems: List<MenuItem>) : Adapter<MenuAdapter.MenuViewHolder>() {
+class MenuAdapter(private val menuItems: List<MenuItem>, private val listener: OnItemClickListener) : Adapter<MenuAdapter.MenuViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_layout, parent, false)
@@ -20,6 +21,9 @@ class MenuAdapter(private val menuItems: List<MenuItem>) : Adapter<MenuAdapter.M
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         val currentItem = menuItems[position]
         holder.bind(currentItem)
+        holder.itemView.setOnClickListener{
+            listener.onItemClick(holder.itemView, position)
+        }
     }
 
     override fun getItemCount(): Int {

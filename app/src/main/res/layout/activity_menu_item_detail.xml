@@ -45,7 +45,8 @@
             android:textStyle="bold"
             android:textSize="22sp"
             android:gravity="center"
-            android:text="@string/detail_text" />
+            android:text=""
+            />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detail_image"
@@ -65,7 +66,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:gravity="center_horizontal"
-            android:text="@string/detail_text" />
+            android:text="" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/detail_description"
@@ -75,7 +76,7 @@
             android:textColor="@color/gray"
             android:textSize="18sp"
             android:gravity="center_horizontal"
-            android:text="@string/detail_text" />
+            android:text="" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/detail_price"
@@ -85,6 +86,6 @@
             android:textColor="@color/Tertiary"
             android:textSize="18sp"
             android:gravity="left"
-            android:text="@string/detail_text" />
+            android:text="" />
     </LinearLayout>
 </ScrollView>

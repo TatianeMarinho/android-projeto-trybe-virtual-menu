@@ -48,6 +48,6 @@ object VirtualMenuDatabase {
         )
     )
 
-            //fun getDishById(id:Int) = dishes.find { it.id == id }
+    fun getDishById(id:Int) = dishes.find { it.id == id }
     fun getDishes() = dishes
 }
